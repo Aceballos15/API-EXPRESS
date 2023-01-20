@@ -1,0 +1,6 @@
+sequelize 
+morgan 
+nodemon 
+pg 
+pg-hstore 
+express
