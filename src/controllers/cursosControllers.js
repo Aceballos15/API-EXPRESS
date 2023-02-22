@@ -46,9 +46,23 @@ const updatecurso= async (req, res)=>{
 }
 
 //controller to delete course
+const deletecurso= async (req, res)=>{
+    const { id }= req.params;
+    try {
+        await curso.destroy({
+            where: {
+                id
+            }
+        }); 
+        res.json({"MESSAGE": "Delete a curso succesfully"});
+    } catch (error) {
+        res.json({"message": "no se puede eliminar"}, error)
+    }
+}
 
 export {
     getcursos, 
     envcursos, 
-    updatecurso
+    updatecurso, 
+    deletecurso
 }

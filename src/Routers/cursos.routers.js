@@ -1,6 +1,6 @@
 import { Router } from 'express'
 const routers= Router(); 
-import { getcursos, envcursos, updatecurso } from '../controllers/cursosControllers.js';
+import { getcursos, envcursos, updatecurso, deletecurso} from '../controllers/cursosControllers.js';
 
 //obtener todos los cursos
 routers.get('/cursos', getcursos)
@@ -13,7 +13,7 @@ routers.post('/cursos', envcursos)
 routers.put('/cursos/:id', updatecurso)
 
 //eliminar curso
-routers.delete('/', )
+routers.delete('/cursos/:id', deletecurso )
 
 //obtetener un curso 
 routers.get('/', )
